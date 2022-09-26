@@ -1,3 +1,5 @@
 <h1>New Todo Task</h1>
 
-<%= render "form" %>
+<%= turbo_frame_tag @todo do %>
+  <%= render "form" %>
+<% end %>

@@ -15,7 +15,10 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
-      redirect_to root_path, notice: 'Success'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Success' }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
