@@ -1,0 +1,18 @@
+<% if @todo.errors.any? %>
+  <%= @todo.errors.full_messages.to_sentence.capitalize %>
+<% end %>
+
+<%= form_with model: @todo, class: 'form' do |f| %>
+  <%= f.text_field :name, autofocus: true , class: 'form-control'%>
+  <br>
+  <div class='actions'>
+    <%= link_to todos_path, class: 'btn btn-warning' do %>
+      <i class="bi bi-x"></i> Cancel
+    <% end %>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<br>
+<br>
+<br>

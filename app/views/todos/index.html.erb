@@ -1,0 +1,12 @@
+<h1 class='text-center'>Todo List</h1><br>
+
+<%= link_to new_todo_path, class: 'btn btn-success btn-lg float-end' do %>
+  <i class='bi bi-plus'></i> New
+<% end %>
+<br>
+<br>
+<br>
+
+<div class='list'>
+  <%= render @todos %>
+</div>
