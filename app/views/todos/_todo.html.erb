@@ -1,16 +1,18 @@
-<div class='card'>
-  <div class='card-body'>
-    <%= todo.name %>
-    <div class='actions'>
-      <%= link_to todo, class: 'btn btn-primary' do %> 
-        <i class="bi bi-display"></i>
-      <% end %>
-      <%= link_to edit_todo_path(todo), class: 'btn btn-warning' do %> 
-        <i class="bi bi-pen"></i>
-      <% end %>
-      <%= link_to  todo, class: 'btn btn-danger', data: { turbo_method: :delete } do %>
-        <i class="bi bi-trash"></i>
-      <% end %>
+<%= turbo_frame_tag todo do %>
+  <div class='card'>
+    <div class='card-body'>
+      <%= todo.name %>
+      <div class='actions'>
+        <%= link_to todo, class: 'btn btn-primary' do %> 
+          <i class="bi bi-display"></i>
+        <% end %>
+        <%= link_to edit_todo_path(todo), class: 'btn btn-warning' do %> 
+          <i class="bi bi-pen"></i>
+        <% end %>
+        <%= link_to  todo, class: 'btn btn-danger', data: { turbo_method: :delete } do %>
+          <i class="bi bi-trash"></i>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
