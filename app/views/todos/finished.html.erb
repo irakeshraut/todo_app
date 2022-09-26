@@ -1,0 +1,14 @@
+<h1 class='text-center'>Finished Task</h1><br>
+
+<br>
+<br>
+<br>
+
+
+<div class='list'>
+  <%= turbo_frame_tag 'todos' do %>
+    <div data-controller='todo'>
+      <%= render @todos %>
+    </div>
+  <% end %>
+</div>

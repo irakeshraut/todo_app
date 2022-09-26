@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todos = Todo.ordered
+    @todos = Todo.ordered.not_finished
   end
 
   def show
@@ -41,6 +41,15 @@ class TodosController < ApplicationController
       format.html { redirect_to root_path, notice: 'Delete Succes' }
       format.turbo_stream
     end
+  end
+
+  def toggle
+    todo = Todo.find(params[:id])
+    todo.update!(finished: params[:todo][:finished])
+  end
+
+  def finished
+    @todos = Todo.where(finished: true)
   end
 
   private
