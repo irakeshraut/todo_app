@@ -1,24 +1,13 @@
-# README
+# Hotwire Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is simple demo app I created for my Presentation of Hotwire at work.
 
-Things you may want to cover:
+There are different branches for each concept of Hotwire, below are branch name.
 
-* Ruby version
+* main (turbo drive, just a basic Rails CRUD app which get turbo drive for free)
 
-* System dependencies
+* frame (turbo frame and turbo stream)
 
-* Configuration
+* broadcast (broadcast via web socket using turbo stream)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* stimilus (stimilus js example)
